@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <header>
+        <h1>dylanspurgin.com</h1>
+    </header>
     <router-view></router-view>
   </div>
 </template>
@@ -12,12 +14,12 @@ export default {
 </script>
 
 <style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Roboto Mono', monospace;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
