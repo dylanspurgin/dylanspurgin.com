@@ -1,66 +1,3 @@
-<template>
-  <div id="app">
-    <header>
-        <h1>dylanspurgin.com</h1>
-    </header>
-    <nav>
-        <a class="button"
-            id="button-1"
-            v-on:click="navigate('/portfolio')"
-            v-bind:class="{ clicked: state.navOnSide }"
-            v-bind:style="{ 'background-image': 'url(' + image1 + ')' }"></a>
-        <a class="button"
-            id="button-2"
-            v-on:click="clicked = true"
-            v-bind:class="{ clicked: state.navOnSide }"
-            v-bind:style="{ 'background-image': 'url(' + image2 + ')' }"></a>
-        <a class="button"
-            id="button-3"
-            v-on:click="clicked = true"
-            v-bind:class="{ clicked: state.navOnSide }"
-            v-bind:style="{ 'background-image': 'url(' + image3 + ')' }"></a>
-        <a class="button"
-            id="button-4"
-            v-on:click="clicked = true"
-            v-bind:class="{ clicked: state.navOnSide }"
-            v-bind:style="{ 'background-image': 'url(' + image4 + ')' }"></a>
-    </nav>
-    <transition name="fade">
-        <router-view></router-view>
-    </transition>
-  </div>
-</template>
-
-<script>
-const cameraImage = require('./assets/camera.png')
-const computerImage = require('./assets/computer.png')
-const resumeImage = require('./assets/resume.png')
-const boxImage = require('./assets/box.png')
-
-let state = {
-  navOnSide: false
-}
-
-export default {
-  name: 'app',
-  data () {
-    return {
-      state: state,
-      navigate: navigate,
-      image1: cameraImage,
-      image2: computerImage,
-      image3: resumeImage,
-      image4: boxImage
-    }
-  }
-}
-
-function navigate (to) {
-  state.navOnSide = true
-  this.$router.push('/portfolio')
-}
-</script>
-
 <style>
 html, body {
     margin: 0;
@@ -72,7 +9,12 @@ html, body {
 }
 
 header {
-    padding: 0 40px;
+    padding: 16px 40px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -83,66 +25,68 @@ header {
 }
 
 .site-content {
-    padding: 0 80px;
+    padding: 0 120px;
 }
 
-router-link {
-    display: block;
-}
-.button {
+
+
+
+
+
+.slider {
     position: absolute;
-    display: block;
-    width: 18vw;
-    height: 18vw;
-    -webkit-transition: all 2s ease;
-    transition: all 2s ease;
-    background-size: contain;
-}
-.button:hover {
-    cursor: pointer;
+    top: 80px;
 }
 
-.button.clicked {
-    left: 100vw !important;
-    margin-left: -10vw !important;
-    height: 10vw;
-    width: 10vw;
+.slide-enter-active {
+    animation: slide-in 0.5s;
+    /*-webkit-animation: slide-in 0.5s;*/
 }
 
-#button-1 {
-    top: 20vh;
-    left: 50vw;
-    margin-left: -21vw;
-}
-#button-1.clicked {
-    top: 10vh;
+.slide-leave-active {
+    animation: slide-out 0.5s;
+    /*-webkit-animation: slide-out 0.5s;*/
 }
 
-#button-2 {
-    top: 20vh;
-    left: 50vw;
-    margin-left: 2vw;
-}
-#button-2.clicked {
-    top: 30vh;
+@keyframes slide-in {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
 }
 
-#button-3 {
-    top: 56vh;
-    left: 50vw;
-    margin-left: -21vw;
-}
-#button-3.clicked {
-    top: 50vh;
+/*@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateY(0%); }
+}*/
+
+@keyframes slide-out {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-120%); }
 }
 
-#button-4 {
-    top: 56vh;
-    left: 50vw;
-    margin-left: 2vw;
-}
-#button-4.clicked {
-    top: 70vh;
-}
-
+/*@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateY(0%); }
+    100% { -webkit-transform: translateY(-100%); }
+}*/
 </style>
+
+<template>
+  <div id="app">
+    <header>
+        <h1>dylanspurgin.com</h1>
+    </header>
+    <ds-navigation></ds-navigation>
+    <transition name="slide">
+        <router-view class="slider"></router-view>
+    </transition>
+  </div>
+</template>
+
+<script>
+import DsNavigation from './components/DsNavigation'
+
+export default {
+  name: 'app',
+  components: {
+    DsNavigation
+  }
+}
+</script>
