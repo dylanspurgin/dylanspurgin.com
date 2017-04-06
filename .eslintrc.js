@@ -17,6 +17,8 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    // 4 spaces for fucksake
+    'indent': ['error', 4],
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

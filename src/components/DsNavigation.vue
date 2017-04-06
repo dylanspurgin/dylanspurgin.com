@@ -5,6 +5,11 @@ nav {
     top: 0;
 }
 
+a,
+a:visited {
+    color: #2c3e50;
+}
+
 .button {
     position: absolute;
     display: block;
@@ -12,6 +17,7 @@ nav {
     transition: all 1s ease;
     text-align: center;
 }
+
 .button:hover {
     cursor: pointer;
 }
@@ -25,9 +31,11 @@ nav {
     width: 18vw;
     height: 18vw;
     background-size: contain;
+    margin-bottom: 4px;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
+
 .button.clicked {
     left: 100vw !important;
     margin-left: -11vw !important;
@@ -70,16 +78,14 @@ nav {
     width: 10vw;
 }
 
-.menu-label {
-
-}
-
+.menu-label {}
 
 #button-1 {
     top: 20vh;
     left: 50vw;
     margin-left: -21vw;
 }
+
 #button-1.clicked {
     top: 10vh;
 }
@@ -89,6 +95,7 @@ nav {
     left: 50vw;
     margin-left: 2vw;
 }
+
 #button-2.clicked {
     top: 30vh;
 }
@@ -98,6 +105,7 @@ nav {
     left: 50vw;
     margin-left: -21vw;
 }
+
 #button-3.clicked {
     top: 50vh;
 }
@@ -107,59 +115,47 @@ nav {
     left: 50vw;
     margin-left: 2vw;
 }
+
 #button-4.clicked {
     top: 70vh;
 }
-
 </style>
 
 <template>
-    <nav>
-        <router-link class="button" id="button-1"
-            :to="{name: 'Portfolio'}"
-            v-bind:class="{ clicked: state.navOnSide }">
-            <span class="circle"></span>
-            <div class="menu-item-container">
-                <div class="menu-image-container"
-                    v-bind:style="{ 'background-image': 'url(' + image1 + ')' }">
-                </div>
-                <span class="menu-label">Portfolio</span>
+<nav>
+    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ clicked: state.navOnSide }">
+        <span class="circle"></span>
+        <div class="menu-item-container">
+            <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }">
             </div>
-        </router-link>
-        <router-link class="button" id="button-2"
-            :to="{name: 'Products'}"
-            v-bind:class="{ clicked: state.navOnSide }">
-            <span class="circle"></span>
-            <div class="menu-item-container">
-                <div class="menu-image-container"
-                    v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
-                </div>
-                <span class="menu-label">Products</span>
+            <span class="menu-label">Portfolio</span>
+        </div>
+    </router-link>
+    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ clicked: state.navOnSide }">
+        <span class="circle"></span>
+        <div class="menu-item-container">
+            <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
             </div>
-        </router-link>
-        <router-link class="button" id="button-3"
-            :to="{name: 'Technologies'}"
-            v-bind:class="{ clicked: state.navOnSide }">
-            <span class="circle"></span>
-            <div class="menu-item-container">
-                <div class="menu-image-container"
-                    v-bind:style="{ 'background-image': 'url(' + image3 + ')' }">
-                </div>
-                <span class="menu-label">Technologies</span>
+            <span class="menu-label">Products</span>
+        </div>
+    </router-link>
+    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ clicked: state.navOnSide }">
+        <span class="circle"></span>
+        <div class="menu-item-container">
+            <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }">
             </div>
-        </router-link>
-        <router-link class="button" id="button-4"
-            :to="{name: 'Resume'}"
-            v-bind:class="{ clicked: state.navOnSide }">
-            <span class="circle"></span>
-            <div class="menu-item-container">
-                <div class="menu-image-container"
-                    v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
-                </div>
-                <span class="menu-label">Resume</span>
+            <span class="menu-label">Technologies</span>
+        </div>
+    </router-link>
+    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ clicked: state.navOnSide }">
+        <span class="circle"></span>
+        <div class="menu-item-container">
+            <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
             </div>
-        </router-link>
-    </nav>
+            <span class="menu-label">Resume</span>
+        </div>
+    </router-link>
+</nav>
 </template>
 
 <script>
@@ -169,25 +165,25 @@ const resumeImage = require('../assets/resume.png')
 const boxImage = require('../assets/box.png')
 
 let state = {
-  navOnSide: false
+    navOnSide: false
 }
 
 export default {
-  name: 'ds-navigation',
-  data () {
-    return {
-      state: state,
-      image1: cameraImage,
-      image2: boxImage,
-      image3: computerImage,
-      image4: resumeImage
+    name: 'ds-navigation',
+    data () {
+        return {
+            state: state,
+            image1: cameraImage,
+            image2: boxImage,
+            image3: computerImage,
+            image4: resumeImage
+        }
+    },
+    watch: {
+        '$route' (to, from) {
+            state.navOnSide = to.name !== 'Home'
+        }
     }
-  },
-  watch: {
-    '$route' (to, from) {
-      state.navOnSide = to.name !== 'Home'
-    }
-  }
 }
 
 </script>

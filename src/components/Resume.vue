@@ -1,32 +1,73 @@
 <template>
 <div class="site-content">
     <h2>Resume</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non lacus porttitor, sodales ante imperdiet, placerat dolor. Fusce sit amet lorem est. Sed condimentum mi ac mi accumsan pharetra. Cras purus sem, ornare ac ornare in, mattis vel augue. Maecenas id sodales leo. Praesent dictum, magna sed porttitor hendrerit, odio lorem suscipit felis, non rhoncus sem eros vel tellus. Donec ex tortor, feugiat eu ligula molestie, tempor tempus odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </p>
-    <p>
-        Morbi ac mauris dui. Ut in libero ullamcorper dolor pellentesque dignissim. Vivamus convallis, diam at euismod cursus, lorem nisi fringilla felis, vel ullamcorper elit lorem a sem. Donec nec justo ac eros scelerisque sodales. Ut sollicitudin metus nec ex dignissim, vitae sollicitudin magna pellentesque. Vestibulum non volutpat enim. Nullam elementum est non ex dapibus, nec lobortis odio scelerisque. Suspendisse gravida rhoncus sapien, ac porta nibh blandit ac. Duis at nisi rhoncus ante hendrerit fringilla. Vivamus purus tellus, vehicula sit amet tortor id, congue tincidunt est. Pellentesque dui ex, volutpat sed lectus eu, ullamcorper cursus lacus. Nulla vulputate condimentum magna at elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed egestas tincidunt tortor. Suspendisse varius consequat augue ornare suscipit. Nam odio lectus, posuere nec erat in, vestibulum malesuada felis.
-    </p>
-    <p>
-        Duis nec orci dui. Nullam gravida suscipit massa, vitae dapibus neque. Proin id sagittis dolor. Mauris vestibulum metus in leo porttitor, id sodales justo convallis. Nunc elementum felis nibh, quis blandit nunc placerat vitae. Nullam sed condimentum lacus. Ut eu mi vel est rhoncus faucibus ac ac neque. In in sodales lorem. Maecenas a eros ac neque rutrum tempus. Vestibulum egestas luctus metus at convallis. Nulla euismod, purus in ultricies condimentum, ante erat facilisis dui, nec hendrerit tellus ligula nec ligula. Ut facilisis augue et sodales maximus. Sed scelerisque non ex at auctor. Vestibulum lobortis bibendum sapien quis imperdiet. Sed auctor blandit condimentum. Etiam quis posuere dui.
-    </p>
-    <p>
-        Mauris non sollicitudin enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ultricies augue non metus semper, at sodales urna convallis. Proin non viverra ipsum, dictum pretium purus. Sed volutpat ligula sit amet libero congue efficitur. Curabitur id purus euismod, mollis risus a, consectetur quam. Nulla lacinia aliquam odio, vitae accumsan sapien sollicitudin et. Donec in luctus dui. Mauris a ultrices elit. Vestibulum ut risus vel dui convallis ornare sit amet mattis elit. Nullam at faucibus dui. Etiam venenatis, urna sit amet sagittis hendrerit, urna lorem imperdiet justo, in eleifend nunc velit ac massa. Suspendisse venenatis fringilla nisi, vel pretium orci lacinia id. Etiam turpis nisi, tempor at iaculis sit amet, sagittis euismod metus. Quisque aliquam ipsum et risus ullamcorper, vitae malesuada turpis hendrerit. Mauris egestas ac lectus eget mollis.
-    </p>
-    <p>
-        Fusce ligula lorem, efficitur vitae commodo eu, vulputate semper ipsum. Cras suscipit congue ex, sit amet cursus felis. Vivamus semper risus nec sapien varius fringilla. Phasellus at felis ac sem egestas facilisis. Curabitur sit amet metus egestas, dapibus orci ut, vulputate turpis. Phasellus scelerisque in lectus a blandit. Nulla tincidunt egestas facilisis. Fusce venenatis vel nisi nec venenatis. Curabitur convallis tincidunt est, vel efficitur velit tristique rutrum. Praesent sit amet nibh nunc. Proin id dolor est. Vivamus tincidunt arcu nec egestas tincidunt. Donec magna augue, commodo vitae mauris quis, dapibus interdum mi.
-    </p>
+
+    <h3>Technologies</h3>
+    <ul>
+        <li><strong>Front-end</strong> Angular, Ionic, Bootstrap, SASS</li>
+        <li><strong>Testing</strong> Karma/Jasmine, Protractor/Webdriver</li>
+        <li><strong>Process</strong> Git/Github, Jira, NPM, Bower</li>
+        <li><strong>Deployment</strong> Gulp/Grunt, CircleCi, S3, Cloudfront</li>
+        <li><strong>Back-end</strong> PHP, Groovy/Grails</li>
+        <li><strong>Database</strong> MySQL, Hibernate</li>
+        <li><strong>Other</strong> WordPress, jQuery</li>
+    </ul>
+
+    <h3>Experience</h3>
+    <h4>Senior UI Engineer at LawnStarter - 2015 to March 2017</h4>
+    <ul>
+        <li>Lead architecture and implementation of consumer, provider and administrator web apps in AngularJS as well as consumer and provider mobile apps in Ionic.</li>
+        <li>Developed and maintain gulp-based build and deployment processes for all web apps using Gulp, CircleCi, S3 and CloudFront.</li>
+        <li>Developed and maintain build and deployment processes for hybrid mobile apps using Webpack, Greenhouse and HockeyApp</li>
+        <li>Implemented best-practice solutions to existing code base to increase developer velocity and reduce complexity and code duplication.</li>
+    </ul>
+
+    <h4>Software Engineer at Invodo - 2010 to 2015</h4>
+    <ul>
+        <li>Product Lead and lead developer for rewrite of video and e-commerce product management and publication system. Written in Angular and fully tested using Karma and Protractor.</li>
+        <li>Contributed to overall system architecture design including data-model design and technology stack choices.</li>
+        <li>UX designer and developer of video CMS portion of larger management application. GWT client, Groovy/Grails server, Hibernate data model.</li>
+        <li>Developed white-label dynamic video gallery application.</li>
+        <li>Developed microsites for web-based mobile phone walkthrough product.</li>
+    </ul>
+
+    <h4>Implementation Engineer at Invodo - 2009 to 2010</h4>
+    <ul>
+        <li>Supported clients implementing video REST API and video player on their sites.</li>
+        <li>Implemented video player and video analytics software on client sites.</li>
+    </ul>
+
+    <h4>Freelance Web Developer - 2006 to 2009</h4>
+    <ul>
+        <li>In 2006 I took the opportunity to take some time to enjoy traveling and rock climbing. During this time I kept my skills up to date by designing and building websites freelance.</li>
+        <li>Designed and built cross browser, pixel-perfect sites using PHP and jQuery/jQueryUI.</li>
+    </ul>
+
+    <h4>QA Analyst / Senior QA Analyst at Symantec - 2003 to 2006</h4>
+    <ul>
+        <li>Managed work and assignments for up to seven QA engineers across multiple applications and releases.</li>
+        <li>Wrote test cases and test plans for new products as well as revised test plans for continued testing of updated software.</li>
+        <li>Wrote SilkTest automation tests for web-based management console for threat detection software suite.</li>
+    </ul>
+
+    <h3>Education</h3>
+    <h4>Grayson County College - 1999 to 2000</h4>
+    <ul>
+        <li>34 hours towards Computer Science Major</li>
+        <li>2 semesters of C++ and Pascal</li>
+    </ul>
+    
 </div>
 </template>
 
 <script>
 export default {
-  name: 'resume',
-  data () {
-    return {
-      foo: 'bar'
+    name: 'resume',
+    data () {
+        return {
+            foo: 'bar'
+        }
     }
-  }
 }
 </script>
 
