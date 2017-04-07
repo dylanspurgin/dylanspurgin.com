@@ -4,21 +4,21 @@
 
     <h3>Technologies</h3>
     <ul>
-        <li><strong>Front-end</strong> Angular, Ionic, Bootstrap, SASS</li>
-        <li><strong>Testing</strong> Karma/Jasmine, Protractor/Webdriver</li>
-        <li><strong>Process</strong> Git/Github, Jira, NPM, Bower</li>
+        <li><strong>Front-end</strong> Angular, Ionic, Vue, Web Components, Bootstrap, SASS, WordPress, jQuery</li>
+        <li><strong>Testing</strong> Karma/Mocha/Jasmine, Protractor/Webdriver</li>
+        <li><strong>Process</strong> Git/Github, Jira, webpack, Yarn</li>
         <li><strong>Deployment</strong> Gulp/Grunt, CircleCi, S3, Cloudfront</li>
-        <li><strong>Back-end</strong> PHP, Groovy/Grails</li>
+        <li><strong>Back-end</strong> PHP, Groovy/Grails, Java</li>
         <li><strong>Database</strong> MySQL, Hibernate</li>
-        <li><strong>Other</strong> WordPress, jQuery</li>
     </ul>
 
     <h3>Experience</h3>
     <h4>Senior UI Engineer at LawnStarter - 2015 to March 2017</h4>
     <ul>
         <li>Lead architecture and implementation of consumer, provider and administrator web apps in AngularJS as well as consumer and provider mobile apps in Ionic.</li>
-        <li>Developed and maintain gulp-based build and deployment processes for all web apps using Gulp, CircleCi, S3 and CloudFront.</li>
-        <li>Developed and maintain build and deployment processes for hybrid mobile apps using Webpack, Greenhouse and HockeyApp</li>
+        <li>Implemented webpack development process for Angular and Ionic apps.</li>
+        <li>Developed and maintained gulp-based build and deployment processes for all web apps using Gulp, CircleCi, S3 and CloudFront.</li>
+        <li>Developed and maintained build and deployment processes for hybrid mobile apps using Webpack, Greenhouse and HockeyApp</li>
         <li>Implemented best-practice solutions to existing code base to increase developer velocity and reduce complexity and code duplication.</li>
     </ul>
 
@@ -56,7 +56,7 @@
         <li>34 hours towards Computer Science Major</li>
         <li>2 semesters of C++ and Pascal</li>
     </ul>
-    
+
 </div>
 </template>
 

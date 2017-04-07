@@ -5,13 +5,13 @@
 </template>
 
 <script>
-const phoneImage = require('./iphone-6plus.png')
+const bgImage = require('./ipad.png')
 export default {
-    name: 'iphone-six-plus',
+    name: 'ipad',
     props: ['screenshot'],
     data () {
         return {
-            bgImage: phoneImage
+            bgImage
         }
     }
 }
@@ -20,18 +20,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 /*
- * Frame is 468x945 px
- * Natural screen size is 414x736 px
+ * Phone is 900x1200 px
+ * Screen is 768x1024 px
  */
 
-$device-width: 468px;
-$device-height: 945px;
+$device-width: 900px;
+$device-height: 1200px;
 
-$screen-width: 414px;
-$screen-height: 736px;
+$screen-width: 768px;
+$screen-height: 1024px;
 
-$screen-top: 102px;
-$screen-left: 24px;
+$screen-top: 94px;
+$screen-left: 68px;
 
 $mobile-divisor: 4;
 $tablet-divisor: 3;
@@ -51,8 +51,8 @@ $tablet-divisor: 3;
         height: $device-height/$mobile-divisor;
     }
     .screen {
-        width: $screen-width/$mobile-divisor;
-        height: $screen-height/$mobile-divisor;
+        width:  $screen-width/$mobile-divisor;
+        height:  $screen-height/$mobile-divisor;
         top: $screen-top/$mobile-divisor;
         left: $screen-left/$mobile-divisor;
     }

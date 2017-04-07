@@ -7,26 +7,49 @@
         related to web best practices.</p>
     <p>The site is fully responsive, with mobile-specific navigation for iPad and smaller devices.</p>
 
-    <iphone-six-plus v-bind:screenshot="waldenHydeScreenshotIPhoneSixPlus"></iphone-six-plus>
+    <div class="devices-container">
+        <iphone-six-plus
+            v-bind:screenshot="waldenHydeScreenshotIPhoneSixPlus"
+            class="device"></iphone-six-plus>
+        <ipad
+            v-bind:screenshot="waldenHydeScreenshotIPad"
+            class="device"></ipad>
+        <laptop
+            v-bind:screenshot="waldenHydeScreenshotLaptop"
+            class="device"></laptop>
+    </div>
 </div>
 </template>
 
 <script>
 import iphoneSixPlus from './iphoneSixPlus'
+import ipad from './ipad'
+import laptop from './laptop'
+
 const waldenHydeScreenshotIPhoneSixPlus = require('../../assets/portfolio/waldenhyde-home-iphone6plus.png')
+const waldenHydeScreenshotIPad = require('../../assets/portfolio/waldenhyde-home-ipad.jpg')
+const waldenHydeScreenshotLaptop = require('../../assets/portfolio/waldenhyde-home-laptop.png')
+
 export default {
     name: 'portfolio',
     data () {
         return {
             foo: 'bar',
-            waldenHydeScreenshotIPhoneSixPlus: waldenHydeScreenshotIPhoneSixPlus
+            waldenHydeScreenshotIPhoneSixPlus,
+            waldenHydeScreenshotIPad,
+            waldenHydeScreenshotLaptop
         }
     },
-    components: { iphoneSixPlus }
+    components: { iphoneSixPlus, ipad, laptop }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="scss" scoped>
+.devices-container {
+    text-align: center;
+}
+.device {
+    margin: 40px;
+}
 </style>

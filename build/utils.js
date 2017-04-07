@@ -20,6 +20,15 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  var sassResourcesLoader = {
+      loader: 'sass-resources-loader',
+      options: {
+          resources: [
+              './src/styles/vars.scss'
+          ]
+      },
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     var loaders = [cssLoader]
@@ -30,6 +39,10 @@ exports.cssLoaders = function (options) {
           sourceMap: options.sourceMap
         })
       })
+    }
+
+    if (loader==='scss' || loader==='sass') {
+        loaders.push(sassResourcesLoader);
     }
 
     // Extract CSS when that option is specified

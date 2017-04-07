@@ -1,17 +1,17 @@
 <template>
 <div class="site-content">
-    
+
 </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
-  data () {
-    return {
-      foo: 'bar'
+    name: 'home',
+    data () {
+        return {
+            foo: 'bar'
+        }
     }
-  }
 }
 </script>
 
