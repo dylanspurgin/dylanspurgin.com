@@ -45,6 +45,7 @@ $desktop-divisor: 3;
 .screen {
     position: relative;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 // Smallest phones up to iphone 5
