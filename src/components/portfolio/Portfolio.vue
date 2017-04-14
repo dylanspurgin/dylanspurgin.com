@@ -10,16 +10,33 @@
     <div class="devices-container">
         <iphone-six-plus
             v-bind:screenshot="waldenHydeScreenshotIPhoneSixPlus"
-            class="device"></iphone-six-plus>
+            class="portfolio-device"></iphone-six-plus>
         <ipad
             v-bind:screenshot="waldenHydeScreenshotIPad"
-            class="device"></ipad>
+            class="portfolio-device"></ipad>
         <laptop
             v-bind:screenshot="waldenHydeScreenshotLaptop"
-            class="device"></laptop>
+            class="portfolio-device"></laptop>
     </div>
 </div>
 </template>
+
+<style lang="scss" scoped>
+.devices-container {
+    text-align: center;
+}
+
+@media (max-width: $mobile-max-width) {
+    .portfolio-device {
+        margin: 10px;
+    }
+}
+@media (min-width: $tablet-min-width) {
+    .portfolio-device {
+        margin: 40px;
+    }
+}
+</style>
 
 <script>
 import iphoneSixPlus from './iphoneSixPlus'
@@ -43,13 +60,3 @@ export default {
     components: { iphoneSixPlus, ipad, laptop }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-.devices-container {
-    text-align: center;
-}
-.device {
-    margin: 40px;
-}
-</style>

@@ -133,9 +133,9 @@ nav.docked {
         flex-wrap: nowrap;
         align-items: center;
         position: fixed;
-        top: 100vh;
+        top: 100%;
         left: 0;
-        width: 100vw;
+        width: 100%;
         height: $mobile-nav-height;
         margin-left: 0;
         z-index: 100;

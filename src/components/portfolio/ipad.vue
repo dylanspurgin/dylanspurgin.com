@@ -33,8 +33,10 @@ $screen-height: 1024px;
 $screen-top: 94px;
 $screen-left: 68px;
 
-$mobile-divisor: 4;
-$tablet-divisor: 3;
+$iphone5-divisor: 8;
+$iphone6-divisor: 6;
+$tablet-divisor: 4;
+$desktop-divisor: 3;
 
 .device {
     display: inline-block;
@@ -45,16 +47,31 @@ $tablet-divisor: 3;
     background-size: cover;
 }
 
-@media (max-width: $mobile-max-width) {
+// Smallest phones up to iphone 5
+@media (max-width: $iphone-five-max-width) {
     .device {
-        width: $device-width/$mobile-divisor;
-        height: $device-height/$mobile-divisor;
+        width: $device-width/$iphone5-divisor;
+        height: $device-height/$iphone5-divisor;
     }
     .screen {
-        width:  $screen-width/$mobile-divisor;
-        height:  $screen-height/$mobile-divisor;
-        top: $screen-top/$mobile-divisor;
-        left: $screen-left/$mobile-divisor;
+        width:  $screen-width/$iphone5-divisor;
+        height:  $screen-height/$iphone5-divisor;
+        top: $screen-top/$iphone5-divisor;
+        left: $screen-left/$iphone5-divisor;
+    }
+}
+
+// iphone 6 larger phones
+@media (min-width: $iphone-six-min-width) {
+    .device {
+        width: $device-width/$iphone6-divisor;
+        height: $device-height/$iphone6-divisor;
+    }
+    .screen {
+        width:  $screen-width/$iphone6-divisor;
+        height:  $screen-height/$iphone6-divisor;
+        top: $screen-top/$iphone6-divisor;
+        left: $screen-left/$iphone6-divisor;
     }
 }
 
@@ -68,6 +85,19 @@ $tablet-divisor: 3;
         height: $screen-height/$tablet-divisor;
         top: $screen-top/$tablet-divisor;
         left: $screen-left/$tablet-divisor;
+    }
+}
+
+@media (min-width: $desktop-min-width) {
+    .device {
+        width: $device-width/$desktop-divisor;
+        height: $device-height/$desktop-divisor;
+    }
+    .screen {
+        width: $screen-width/$desktop-divisor;
+        height: $screen-height/$desktop-divisor;
+        top: $screen-top/$desktop-divisor;
+        left: $screen-left/$desktop-divisor;
     }
 }
 </style>
