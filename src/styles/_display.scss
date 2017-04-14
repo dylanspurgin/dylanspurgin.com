@@ -1,0 +1,17 @@
+@media (max-width: $mobile-max-width) {
+    .hidden-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    .hidden-tablet {
+        display: none;
+    }
+}
+
+@media (min-width: $desktop-min-width) {
+    .hidden-desktop {
+        display: none;
+    }
+}

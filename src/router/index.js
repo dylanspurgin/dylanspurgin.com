@@ -8,7 +8,7 @@ import Resume from '@/components/Resume'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes: [
         {
@@ -38,3 +38,10 @@ export default new VueRouter({
         }
     ]
 })
+
+router.beforeEach(function (to, from, next) {
+    window.scrollTo(0, 0)
+    next()
+})
+
+export default router

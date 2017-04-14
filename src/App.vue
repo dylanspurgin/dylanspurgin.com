@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
 html,
 body {
     margin: 0;
@@ -6,15 +6,55 @@ body {
 }
 
 #app {
-    font-family: 'Roboto Mono', monospace;
-    color: #2c3e50;
+    font-family: $brand-font-family-serif;
+    color: $brand-color;
 }
 
-header {
-    padding: 16px 40px;
+// PHONE
+@media (max-width: $mobile-max-width) {
+    #app {
+        font-size: $font-size-mobile;
+    }
+    header {
+        height: $header-height;
+        padding: $header-padding--mobile;
+        h1 {
+            font-size:24px;
+        }
+    }
+    .site-content {
+        padding: $content-padding--mobile;
+    }
+}
+// TABLET
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    #app {
+        font-size: $font-size-tablet;
+    }
+    header {
+        height: $header-height;
+        padding: $header-padding--tablet;
+    }
+    .site-content {
+        padding: $content-padding--tablet;
+    }
+}
+// IPAD PRO & DESKTOP
+@media (min-width: $desktop-min-width) {
+    #app {
+        font-size: $font-size-desktop;
+    }
+    header {
+        height: $header-height;
+        padding: $header-padding--desktop;
+    }
+    .site-content {
+        padding: $content-padding--desktop;
+    }
 }
 
 header h1 {
+    line-height: $header-height;
     margin: 0;
     padding: 0;
 }
@@ -34,10 +74,6 @@ header h1 a {
 
 {
     opacity: 0
-}
-
-.site-content {
-    padding: 0 200px 80px 120px;
 }
 
 .slider {

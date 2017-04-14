@@ -1,3 +1,25 @@
 $mobile-max-width: 767px;
 $tablet-min-width: 768px;
 $tablet-max-width: 1024px;
+$desktop-min-width: 1025px;
+
+$brand-color: #2c3e50;
+$brand-font-family-serif: 'Roboto Mono', monospace;
+
+$font-size-mobile: 18px;
+$font-size-tablet: 14px;
+$font-size-desktop: 14px;
+
+
+$header-height: 80px;
+
+$mobile-nav-height: 66px;
+
+$header-padding--mobile: 0px 20px;
+$content-padding--mobile: 0 20px $mobile-nav-height+40px 20px;
+
+$header-padding--tablet: 0px 40px;
+$content-padding--tablet: 0 120px 80px 120px;
+
+$header-padding--desktop: 0px 40px;
+$content-padding--desktop: 0 120px 80px 120px;

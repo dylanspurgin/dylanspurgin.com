@@ -1,129 +1,277 @@
-<style>
-nav {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-}
+<style lang="scss">
+
+$menu-item-size--small: 60px;
+$menu-item-size--medium: 140px;
+$menu-item-size--large: 180px;
+
+$menu-item-mobile-docked-size: 36px;
+$menu-item-docked-size--small: 40px;
+
+$menu-font-size--portrait: 4vw;
+$menu-font-size--landscape: 3vh;
+
+$menu-mobile-docked-font-size: 2vw;
+$menu-docked-font-size--portrait: 1vw;
+$menu-docked-font-size--landscape: 1vh;
+
+$menu-highlight-color: #ccc;
 
 a,
 a:visited {
-    color: #2c3e50;
+    color: $brand-color;
+}
+a.router-link-active {
+    font-weight: bold;
 }
 
 .button {
-    position: absolute;
-    display: block;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     text-align: center;
 }
-
 .button:hover {
     cursor: pointer;
 }
 
-.menu-item-container {
-    position: absolute;
-    text-align: center;
-}
-
 .menu-image-container {
-    width: 18vw;
-    height: 18vw;
     background-size: contain;
-    margin-bottom: 4px;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
 
-.button.clicked {
-    left: 100vw !important;
-    margin-left: -11vw !important;
-    font-size: 12px;
+/*
+ * Undocked main nav.
+ * Portrait orientation.
+ * All sizes
+ */
+@media (orientation:portrait) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 20vh;
+        left: 50vw;
+        margin-left: -30vw;
+        width: 60vw;
+        height: 60vw;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+        .menu-image-container {
+            width: 18vw;
+            height: 18vw;
+            position: relative;
+            margin: 0 auto 2vw auto;
+        }
+        .button {
+            text-decoration: none;
+            width: 50%;
+        }
+        .menu-label {
+            font-size: $menu-font-size--portrait;
+        }
+    }
 }
+
+/*
+ * Undocked main nav.
+ * Landscape orientation.
+ * All sizes
+ */
+@media (orientation:landscape) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 20vh;
+        left: 50vw;
+        margin-left: -25vh;
+        width: 50vh;
+        height: 60vh;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+        .menu-image-container {
+            width: 18vh;
+            height: 18vh;
+            margin: 0 auto 0 auto;
+            position: relative;
+        }
+        .button {
+            text-decoration: none;
+            width: 50%;
+        }
+        .menu-label {
+            font-size: $menu-font-size--landscape;
+        }
+    }
+}
+
+nav.docked {
+    .hidden-docked {
+        display: none;
+    }
+}
+
+
+
+/*
+ * PHONE
+ * Portrait & Landscape
+ * DOCKED (bottom)
+ */
+@media (max-width: $mobile-max-width) {
+    nav.docked {
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+        position: fixed;
+        top: 100vh;
+        left: 0;
+        width: 100vw;
+        height: $mobile-nav-height;
+        margin-left: 0;
+        z-index: 100;
+        margin-top: -$mobile-nav-height;
+        line-height: $menu-font-size--portrait;
+        box-shadow: 0px -1px 2px 0px #ccc;
+
+        .button {
+            flex-grow: 1;
+            position: relative;
+            top: initial;
+            left: initial;
+            margin: 0;
+            height: 100%;
+            .menu-image-container {
+                width: $menu-item-mobile-docked-size;
+                height: $menu-item-mobile-docked-size;
+                margin: 8px auto 0 auto;
+                position: relative;
+            }
+            .circle {
+                display: none;
+            }
+            .menu-label {
+                font-size: $menu-mobile-docked-font-size;
+            }
+        }
+    }
+}
+
+
+/*
+ * TABLET & DESKTOP
+ * Portrait & Landscape
+ * Docked (right)
+ */
+@media (min-width: $tablet-min-width) {
+
+    // DOCKED (RIGHT) NAV
+    nav.docked {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+        position: fixed;
+        top: $header-height;
+        left: 100vw;
+        margin-left: -$menu-item-size--small;
+        z-index: 100;
+        width: $menu-item-size--small;
+        height: $menu-item-size--small*5;
+
+        .button {
+            flex-grow: 1;
+            width: 100%;
+            position: relative;
+            top: initial;
+            margin: 0;
+            left: initial;
+            .menu-image-container {
+                width: $menu-item-docked-size--small;
+                height: $menu-item-docked-size--small;
+                margin: 0 auto;
+                position: relative;
+            }
+            .circle {
+                width: $menu-item-size--small;
+                height: $menu-item-size--small;
+                top: 0;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                border-radius: $menu-item-docked-size--small;
+            }
+        }
+    }
+}
+
+
+/*
+ * TABLET & DESKTOP
+ * Portrait
+ * Docked (right)
+ */
+@media (min-width: $tablet-min-width) and (orientation:portrait) {
+    nav.docked {
+        .menu-label {
+            font-size: $menu-docked-font-size--portrait;
+        }
+    }
+}
+/*
+ * TABLET & DESKTOP
+ * Portrait
+ * Docked (right)
+ */
+@media (min-width: $tablet-min-width) and (orientation:landscape) {
+    nav.docked {
+        .menu-label {
+            font-size: $menu-docked-font-size--landscape;
+        }
+    }
+}
+
+
 
 .circle {
     position: absolute;
-    top: 10vw;
-    left: 10vw;
     border-radius: 0vw;
-    background: red;
+    background: $menu-highlight-color;
     opacity: .3;
-    width: 0vw;
-    height: 0vw;
+    width: 0px;
+    height: 0px;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 
-.button.clicked .circle {
+.button.docked .circle {
     top: 0vw;
     left: 0vw;
-    border-radius: 10vw;
     opacity: 0;
-    width: 10vw;
-    height: 10vw;
 }
 
-.button.clicked.router-link-active .circle {
+.button.docked.router-link-active .circle {
     opacity: .3;
     top: 0vw;
     left: 0vw;
-    height: 10vw;
-    width: 10vw;
-    border-radius: 10vw;
 }
 
-.button.clicked .menu-image-container {
-    height: 10vw;
-    width: 10vw;
-}
-
-.menu-label {}
-
-#button-1 {
-    top: 20vh;
-    left: 50vw;
-    margin-left: -21vw;
-}
-
-#button-1.clicked {
-    top: 10vh;
-}
-
-#button-2 {
-    top: 20vh;
-    left: 50vw;
-    margin-left: 2vw;
-}
-
-#button-2.clicked {
-    top: 30vh;
-}
-
-#button-3 {
-    top: 56vh;
-    left: 50vw;
-    margin-left: -21vw;
-}
-
-#button-3.clicked {
-    top: 50vh;
-}
-
-#button-4 {
-    top: 56vh;
-    left: 50vw;
-    margin-left: 2vw;
-}
-
-#button-4.clicked {
-    top: 70vh;
-}
 </style>
 
 <template>
-<nav>
-    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ clicked: state.navOnSide }">
+<nav v-bind:class="{ docked: state.navOnSide }">
+    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ docked: state.navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }">
@@ -131,7 +279,7 @@ a:visited {
             <span class="menu-label">Portfolio</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ clicked: state.navOnSide }">
+    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: state.navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
@@ -139,15 +287,15 @@ a:visited {
             <span class="menu-label">Products</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ clicked: state.navOnSide }">
+    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ docked: state.navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }">
             </div>
-            <span class="menu-label">Technologies</span>
+            <span class="menu-label">Tech<span class="hidden-docked">nologies</span></span>
         </div>
     </router-link>
-    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ clicked: state.navOnSide }">
+    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: state.navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
