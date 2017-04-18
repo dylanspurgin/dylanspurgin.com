@@ -1,0 +1,14 @@
+.ds-icon {
+    &::before {
+        content: '';
+    }
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+}
+
+
+.ds-icon--new-tab {
+    background-image: url('/static/icon--new-tab.png')
+}
