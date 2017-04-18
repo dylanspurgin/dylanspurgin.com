@@ -270,8 +270,8 @@ nav.docked {
 </style>
 
 <template>
-<nav v-bind:class="{ docked: state.navOnSide }">
-    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ docked: state.navOnSide }">
+<nav v-bind:class="{ docked: navOnSide }">
+    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }">
@@ -279,7 +279,7 @@ nav.docked {
             <span class="menu-label">Portfolio</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: state.navOnSide }">
+    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
@@ -287,7 +287,7 @@ nav.docked {
             <span class="menu-label">Products</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ docked: state.navOnSide }">
+    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }">
@@ -295,7 +295,7 @@ nav.docked {
             <span class="menu-label">Tech<span class="hidden-docked">nologies</span></span>
         </div>
     </router-link>
-    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: state.navOnSide }">
+    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
@@ -312,24 +312,19 @@ const computerImage = require('../assets/computer.png')
 const resumeImage = require('../assets/resume.png')
 const boxImage = require('../assets/box.png')
 
-let state = {
-    navOnSide: false
-}
-
 export default {
     name: 'ds-navigation',
     data () {
         return {
-            state: state,
             image1: cameraImage,
             image2: boxImage,
             image3: computerImage,
             image4: resumeImage
         }
     },
-    watch: {
-        '$route' (to, from) {
-            state.navOnSide = to.name !== 'Home'
+    computed: {
+        navOnSide () {
+            return this.$route.name !== 'Home'
         }
     }
 }
