@@ -20,6 +20,25 @@ html {
     color: $brand-color;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+
+    img.header-icon {
+        margin: 12px 10px 0 0;
+    }
+
+    h1 {
+        line-height: $header-height;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 a {
+        text-decoration: none;
+    }
+}
+
 .site-content {
     width: 100%;
 
@@ -34,8 +53,14 @@ html {
         font-size: $font-size-mobile;
     }
     header {
-        height: $header-height;
+        height: $header-height-mobile;
         padding: $header-padding--mobile;
+
+        img.header-icon {
+            margin: 20px 10px 0 0;
+            height: 40px;
+        }
+
         h1 {
             font-size:24px;
         }
@@ -68,25 +93,6 @@ html {
     }
     .site-content {
         padding: $content-padding--desktop;
-    }
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-
-    img {
-        margin: 12px 10px 0 0;
-    }
-
-    h1 {
-        line-height: $header-height;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1 a {
-        text-decoration: none;
     }
 }
 
@@ -151,7 +157,7 @@ header {
 <template>
 <div id="app">
     <header>
-        <img src="./assets/computer.png" height="60" />
+        <img class="header-icon" src="./assets/computer.png" height="60" />
         <h1><router-link :to="{name: 'Home'}">dylanspurgin.com</router-link></h1>
     </header>
     <ds-navigation></ds-navigation>

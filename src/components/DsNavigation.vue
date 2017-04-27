@@ -39,6 +39,10 @@ a.router-link-active {
     transition: all 1s ease;
 }
 
+nav {
+    z-index: 100;
+}
+
 /*
  * Undocked main nav.
  * Portrait orientation.
