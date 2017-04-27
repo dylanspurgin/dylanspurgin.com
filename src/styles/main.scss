@@ -1,2 +1,27 @@
 @import 'display';
 @import 'icons';
+@import 'form';
+
+.strong {
+    font-weight: bold;
+}
+
+
+
+@media (max-width: $mobile-max-width) {
+    .small {
+        font-size: $font-size-mobile--sm;
+    }
+}
+// TABLET
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    .small {
+        font-size: $font-size-tablet--sm;
+    }
+}
+// IPAD PRO & DESKTOP
+@media (min-width: $desktop-min-width) {
+    .small {
+        font-size: $font-size-desktop--sm;
+    }
+}

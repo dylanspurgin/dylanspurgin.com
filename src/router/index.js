@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 import Portfolio from '@/components/Portfolio'
 import Products from '@/components/Products'
-import Technologies from '@/components/Technologies'
+import Contact from '@/components/Contact'
 import Resume from '@/components/Resume'
 
 Vue.use(VueRouter)
@@ -27,9 +27,9 @@ const router = new VueRouter({
             component: Products
         },
         {
-            path: '/technologies',
-            name: 'Technologies',
-            component: Technologies
+            path: '/contact',
+            name: 'Contact',
+            component: Contact
         },
         {
             path: '/resume',

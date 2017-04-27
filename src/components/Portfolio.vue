@@ -2,7 +2,10 @@
     <div class="site-content">
         <h2>Portfolio</h2>
 
-        <h3>WaldenHyde.com <a href="http://www.waldenhyde.com/" target="_blank"><i class="ds-icon ds-icon--new-tab"></i></a></h3>
+        <h3>WaldenHyde.com</h3>
+        <ul>
+            <li><a href="http://www.waldenhyde.com/" target="_blank">View the site <i class="ds-icon ds-icon--new-tab"></i></a></li>
+        </ul>
         <p>This site for the design agency Walden Hyde was a collaboration between myself and their design team. Basic site design and direction was provided by the agency. I developed the site as a WordPress theme and provided guidance for design decisions
             related to web best practices.</p>
         <p>The site is fully responsive, with mobile-specific navigation for iPad and smaller devices.</p>
@@ -20,8 +23,13 @@
         </div>
 
         <h3>LawnStarter</h3>
-        <p>I lead front-end development at LawnStarter for a little over a year. In that time I worked to bring the three Angular apps up to current standards. I implemented Angular best practices including conforming to John Papa's style guide, adding test cases, and a gulp (later webpack) development and deployment process.</p>
-        <p>The customer web app allows users to order, monitor and manage lawn care service for multiple properties.</p>
+        <p>I lead front-end development at LawnStarter for a little over a year.
+            In that time I worked to bring the three Angular apps up to current
+            standards. I implemented Angular best practices including conforming
+            to a code style guide, adding test cases, and a gulp (later webpack)
+            development and deployment process.</p>
+        <p>The customer web app allows users to order, monitor and manage lawn
+            care service for multiple properties.</p>
 
         <div class="devices-container">
             <laptop
@@ -35,6 +43,27 @@
                 v-bind:screenshot="prosLawnstarterLaptop"
                 class="portfolio-device"></laptop>
         </div>
+
+        <h3>Monster Browser</h3>
+        <ul>
+            <li><a href="https://dylanspurgin.github.io/monster-browser" target="_blank">View the app <i class="ds-icon ds-icon--new-tab"></i></a></li>
+            <li><a href="https://github.com/dylanspurgin/monster-browser" target="_blank">View source <i class="ds-icon ds-icon--new-tab"></i></a></li>
+        </ul>
+        <p>Monster Browser is a fun project I worked on with my daughter. I
+            wanted to build an app to use as a live example of a responsive web
+            application as well as my Angular coding styles.</p>
+        <div class="devices-container">
+            <iphone-six-plus
+                v-bind:screenshot="monsterBrowserScreenshotIPhoneSixPlus"
+                class="portfolio-device"></iphone-six-plus>
+            <ipad
+                v-bind:screenshot="monsterBrowserScreenshotIPad"
+                class="portfolio-device"></ipad>
+            <laptop
+                v-bind:screenshot="monsterBrowserScreenshotLaptop"
+                class="portfolio-device"></laptop>
+        </div>
+
     </div>
 </template>
 
@@ -66,6 +95,10 @@
     const prosLawnstarterLaptop = require('../assets/portfolio/pros.lawnstarter-laptop.jpg')
     const myLawnstarterLaptop = require('../assets/portfolio/my.lawnstarter-laptop.jpg')
 
+    const monsterBrowserScreenshotIPhoneSixPlus = require('../assets/portfolio/monster-browser--iphone6plus.jpg')
+    const monsterBrowserScreenshotIPad = require('../assets/portfolio/monster-browser--ipad.jpg')
+    const monsterBrowserScreenshotLaptop = require('../assets/portfolio/monster-browser--laptop.jpg')
+
     export default {
         name: 'portfolio',
         data () {
@@ -75,7 +108,11 @@
                 waldenHydeScreenshotLaptop,
 
                 myLawnstarterLaptop,
-                prosLawnstarterLaptop
+                prosLawnstarterLaptop,
+
+                monsterBrowserScreenshotIPhoneSixPlus,
+                monsterBrowserScreenshotIPad,
+                monsterBrowserScreenshotLaptop
             }
         },
         components: { iphoneSixPlus, ipad, laptop }

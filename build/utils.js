@@ -24,7 +24,8 @@ exports.cssLoaders = function (options) {
       loader: 'sass-resources-loader',
       options: {
           resources: [
-              './src/styles/vars.scss'
+              './src/styles/vars.scss',
+              './src/styles/colors.scss'
           ]
       },
   }

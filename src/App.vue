@@ -5,9 +5,23 @@ body {
     padding: 0;
 }
 
+/* apply a natural box layout model to all elements, but allowing components to change
+ * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 #app {
     font-family: $brand-font-family-serif;
     color: $brand-color;
+}
+
+.site-content {
+    width: 100%;
 }
 
 // PHONE
@@ -53,14 +67,23 @@ body {
     }
 }
 
-header h1 {
-    line-height: $header-height;
-    margin: 0;
-    padding: 0;
-}
+header {
+    display: flex;
+    flex-direction: row;
 
-header h1 a {
-    text-decoration: none;
+    img {
+        margin: 12px 10px 0 0;
+    }
+
+    h1 {
+        line-height: $header-height;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 a {
+        text-decoration: none;
+    }
 }
 
 .fade-enter-active,
@@ -124,6 +147,7 @@ header h1 a {
 <template>
 <div id="app">
     <header>
+        <img src="./assets/computer.png" height="60" />
         <h1><router-link :to="{name: 'Home'}">dylanspurgin.com</router-link></h1>
     </header>
     <ds-navigation></ds-navigation>

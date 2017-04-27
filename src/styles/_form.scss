@@ -1,0 +1,53 @@
+.form-group {
+    margin-bottom: 8px;
+}
+.form-group-vertical {
+    label {
+        display: block;
+    }
+}
+
+.help {
+    color: $brand-red;
+}
+
+.button {
+    background-color: white;
+    border: solid 1px $brand-color;
+    font-family: $brand-font-family-serif;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+input, textarea {
+    border: solid 1px $brand-color;
+    width: 100%;
+}
+
+// PHONE
+@media (max-width: $mobile-max-width) {
+    input, textarea {
+        font-size: $font-size-mobile;
+    }
+    .button {
+        font-size: $font-size-mobile;
+    }
+}
+// TABLET
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    input, textarea{
+        font-size: $font-size-tablet;
+    }
+    .button {
+        font-size: $font-size-tablet;
+    }
+}
+// IPAD PRO & DESKTOP
+@media (min-width: $desktop-min-width) {
+    input, textarea {
+        font-size: $font-size-desktop;
+    }
+    .button {
+        font-size: $font-size-desktop;
+    }
+}

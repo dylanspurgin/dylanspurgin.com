@@ -24,12 +24,12 @@ a.router-link-active {
     font-weight: bold;
 }
 
-.button {
+.nav-button {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     text-align: center;
 }
-.button:hover {
+.nav-button:hover {
     cursor: pointer;
 }
 
@@ -65,7 +65,7 @@ a.router-link-active {
             position: relative;
             margin: 0 auto 2vw auto;
         }
-        .button {
+        .nav-button {
             text-decoration: none;
             width: 50%;
         }
@@ -101,7 +101,7 @@ a.router-link-active {
             margin: 0 auto 0 auto;
             position: relative;
         }
-        .button {
+        .nav-button {
             text-decoration: none;
             width: 50%;
         }
@@ -143,7 +143,7 @@ nav.docked {
         line-height: $menu-font-size--portrait;
         box-shadow: 0px -1px 2px 0px #ccc;
 
-        .button {
+        .nav-button {
             flex-grow: 1;
             position: relative;
             top: initial;
@@ -190,7 +190,7 @@ nav.docked {
         width: $menu-item-size--small;
         height: $menu-item-size--small*5;
 
-        .button {
+        .nav-button {
             flex-grow: 1;
             width: 100%;
             position: relative;
@@ -255,13 +255,13 @@ nav.docked {
     transition: all .5s ease;
 }
 
-.button.docked .circle {
+.nav-button.docked .circle {
     top: 0vw;
     left: 0vw;
     opacity: 0;
 }
 
-.button.docked.router-link-active .circle {
+.nav-button.docked.router-link-active .circle {
     opacity: .3;
     top: 0vw;
     left: 0vw;
@@ -271,7 +271,7 @@ nav.docked {
 
 <template>
 <nav v-bind:class="{ docked: navOnSide }">
-    <router-link class="button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-1" :to="{name: 'Portfolio'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }">
@@ -279,7 +279,7 @@ nav.docked {
             <span class="menu-label">Portfolio</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
@@ -287,15 +287,15 @@ nav.docked {
             <span class="menu-label">Products</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-3" :to="{name: 'Technologies'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-3" :to="{name: 'Contact'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }">
             </div>
-            <span class="menu-label">Tech<span class="hidden-docked">nologies</span></span>
+            <span class="menu-label">Contact</span>
         </div>
     </router-link>
-    <router-link class="button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
@@ -308,7 +308,7 @@ nav.docked {
 
 <script>
 const cameraImage = require('../assets/camera.png')
-const computerImage = require('../assets/computer.png')
+const letterImage = require('../assets/letter.png')
 const resumeImage = require('../assets/resume.png')
 const boxImage = require('../assets/box.png')
 
@@ -318,7 +318,7 @@ export default {
         return {
             image1: cameraImage,
             image2: boxImage,
-            image3: computerImage,
+            image3: letterImage,
             image4: resumeImage
         }
     },
