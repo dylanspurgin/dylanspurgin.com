@@ -2,9 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 import Portfolio from '@/components/Portfolio'
-import Products from '@/components/Products'
+import Services from '@/components/Services'
 import Contact from '@/components/Contact'
 import Resume from '@/components/Resume'
+import About from '@/components/About'
 
 Vue.use(VueRouter)
 
@@ -22,9 +23,9 @@ const router = new VueRouter({
             component: Portfolio
         },
         {
-            path: '/products',
-            name: 'Products',
-            component: Products
+            path: '/services',
+            name: 'Services',
+            component: Services
         },
         {
             path: '/contact',
@@ -35,6 +36,11 @@ const router = new VueRouter({
             path: '/resume',
             name: 'Resume',
             component: Resume
+        },
+        {
+            path: '/about',
+            name: 'About',
+            component: About
         }
     ]
 })

@@ -1,6 +1,6 @@
 <template>
     <div class="site-content products">
-        <h2>Products</h2>
+        <h2>Services</h2>
 
         <h3>Web Applications and Components</h3>
         <h4>Features include</h4>
@@ -83,7 +83,7 @@
     const offsiteAtxScreenshotLaptop = require('../assets/portfolio/workshift-laptop.jpg')
 
     export default {
-        name: 'products',
+        name: 'services',
         data () {
             return {
                 offsiteAtxScreenshotIPhoneSixPlus,

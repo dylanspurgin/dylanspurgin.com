@@ -189,7 +189,7 @@ nav.docked {
         position: fixed;
         top: $header-height;
         left: 100vw;
-        margin-left: -$menu-item-size--small;
+        margin-left: -($menu-item-size--small + 17px); // 17px = scrollbar width
         z-index: 100;
         width: $menu-item-size--small;
         height: $menu-item-size--small*5;
@@ -283,12 +283,12 @@ nav.docked {
             <span class="menu-label">Portfolio</span>
         </div>
     </router-link>
-    <router-link class="nav-button" id="button-2" :to="{name: 'Products'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-2" :to="{name: 'Services'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }">
             </div>
-            <span class="menu-label">Products</span>
+            <span class="menu-label">Services</span>
         </div>
     </router-link>
     <router-link class="nav-button" id="button-3" :to="{name: 'Contact'}" v-bind:class="{ docked: navOnSide }">
@@ -299,21 +299,29 @@ nav.docked {
             <span class="menu-label">Contact</span>
         </div>
     </router-link>
-    <router-link class="nav-button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: navOnSide }">
+    <router-link class="nav-button" id="button-4" :to="{name: 'About'}" v-bind:class="{ docked: navOnSide }">
+        <span class="circle"></span>
+        <div class="menu-item-container">
+            <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
+            </div>
+            <span class="menu-label">About</span>
+        </div>
+    </router-link>
+    <!-- <router-link class="nav-button" id="button-4" :to="{name: 'Resume'}" v-bind:class="{ docked: navOnSide }">
         <span class="circle"></span>
         <div class="menu-item-container">
             <div class="menu-image-container" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }">
             </div>
             <span class="menu-label">Resume</span>
         </div>
-    </router-link>
+    </router-link> -->
 </nav>
 </template>
 
 <script>
 const cameraImage = require('../assets/camera.png')
-const letterImage = require('../assets/letter.png')
-const resumeImage = require('../assets/resume.png')
+const phoneImage = require('../assets/phone.png')
+const dylanImage = require('../assets/dylan.png')
 const boxImage = require('../assets/box.png')
 
 export default {
@@ -322,8 +330,8 @@ export default {
         return {
             image1: cameraImage,
             image2: boxImage,
-            image3: letterImage,
-            image4: resumeImage
+            image3: phoneImage,
+            image4: dylanImage
         }
     },
     computed: {

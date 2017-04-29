@@ -57,12 +57,13 @@ header {
         padding: $header-padding--mobile;
 
         img.header-icon {
-            margin: 20px 10px 0 0;
+            margin: 12px 10px 0 0;
             height: 40px;
         }
 
         h1 {
             font-size:24px;
+            line-height: $header-height-mobile;
         }
     }
     .site-content {
@@ -157,7 +158,7 @@ header {
 <template>
 <div id="app">
     <header>
-        <img class="header-icon" src="./assets/computer.png" height="60" />
+        <router-link :to="{name: 'Home'}"><img class="header-icon" src="./assets/computer.png" height="80" /></router-link>
         <h1><router-link :to="{name: 'Home'}">dylanspurgin.com</router-link></h1>
     </header>
     <ds-navigation></ds-navigation>
