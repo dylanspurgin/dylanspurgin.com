@@ -11,9 +11,13 @@
                 <p>I am a software engineer from Austin, Tx.</p>
                 <p>I love creating unique user experiences for the web and mobile devices. Most recently I have been building AngularJS applications, Ionic hybrid-mobile apps, and WordPress sites. I am also experimenting with Vue.js and the web components standards. But the technology always comes second to the end result.</p>
                 <p>
+                    <router-link :to="{name: 'Resume'}">Resume</router-link>
+                    |
                     <a href="https://www.linkedin.com/in/dylan-spurgin-0822a211/" target="_blank">LinkedIn</a>
                     |
                     <a href="https://www.instagram.com/dylanwinsyo/" target="_blank">Instagram</a>
+                    |
+                    <a href="http://followthepurplepony.com" target="_blank">Travel Blog</a>
                     |
                     <a href="https://www.youtube.com/channel/UCG4a-zwe9-0ADbhD4z87fhQ" target="_blank">YouTube</a>
                     </p>
