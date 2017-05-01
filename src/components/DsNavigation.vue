@@ -321,7 +321,7 @@ nav.docked {
 <script>
 const cameraImage = require('../assets/camera.png')
 const phoneImage = require('../assets/phone.png')
-const dylanImage = require('../assets/dylan.png')
+const resumeImage = require('../assets/resume.png')
 const boxImage = require('../assets/box.png')
 
 export default {
@@ -331,7 +331,7 @@ export default {
             image1: cameraImage,
             image2: boxImage,
             image3: phoneImage,
-            image4: dylanImage
+            image4: resumeImage
         }
     },
     computed: {
