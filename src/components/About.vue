@@ -13,6 +13,8 @@
                 <p>
                     <router-link :to="{name: 'Resume'}">Resume</router-link>
                     |
+                    <a href="https://github.com/dylanspurgin" target="_blank">Github</a>
+                    |
                     <a href="https://www.linkedin.com/in/dylan-spurgin-0822a211/" target="_blank">LinkedIn</a>
                     |
                     <a href="https://www.instagram.com/dylanwinsyo/" target="_blank">Instagram</a>
