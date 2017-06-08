@@ -1,7 +1,11 @@
+<style lang="scss" scoped>
+    
+</style>
+
 <template>
     <div class="site-content">
         <h2>Contact</h2>
-        <div class="contact-content-wrapper">
+        <div class="ds-two-column--wrapper">
             <div class="contact-copy">
                 <h3>Hello, I'd love to hear from you!</h3>
                 <p>If you'd like to get in touch you
@@ -9,7 +13,7 @@
                     or use the form on this page. Either way, I'll get back to
                     you as quickly as possible.</p>
             </div>
-            <div class="contact-form">
+            <div class="ds-panel contact-form">
                 <form @submit.prevent="submitForm" v-if="!formSubmitted">
                     <div class="form-group form-group-vertical">
                         <label for="name">Name</label>
@@ -44,28 +48,6 @@
         </div>
     </div>
 </template>
-
-<style lang="scss" scoped>
-    @media (max-width: $mobile-max-width) {
-        .contact-content-wrapper {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    @media (min-width: $tablet-min-width) {
-        .contact-content-wrapper {
-            display: flex;
-            flex-direction: row;
-        }
-        .contact-form {
-            min-width: 60%;
-            padding: 40px;
-            margin-left: 40px;
-            background-color: #ccc;
-            border-top: solid 4px $brand-color;
-        }
-    }
-</style>
 
 <script>
 export default {

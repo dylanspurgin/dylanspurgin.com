@@ -1,12 +1,8 @@
+@import 'layout';
+@import 'theme';
 @import 'display';
-@import 'icons';
 @import 'form';
-
-.strong {
-    font-weight: bold;
-}
-
-
+@import 'icons';
 
 @media (max-width: $mobile-max-width) {
     .small {

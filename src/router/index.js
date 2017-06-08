@@ -41,6 +41,13 @@ const router = new VueRouter({
             path: '/about',
             name: 'About',
             component: About
+        },
+        {
+            path: '/payment',
+            name: 'Payment',
+            component: function (resolve) {
+                require(['../components/Payment.vue'], resolve)
+            }
         }
     ]
 })

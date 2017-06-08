@@ -3,3 +3,8 @@ $start-red: #FF0000;
 
 $brand-color: #2c3e50;
 $brand-red: $start-red;
+$error-red: desaturate($start-red, 50%);
+
+$gray: #666;
+$brand-gray: #ccc;
+$gray-light: lighten($gray, 33%);

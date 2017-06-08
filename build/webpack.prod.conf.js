@@ -94,6 +94,14 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
+    ]),
+    // copy composer vendor dir
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../vendor'),
+        to: config.build.assetsSubDirectory + '/server/vendor',
+        ignore: ['.*']
+      }
     ])
   ]
 })
