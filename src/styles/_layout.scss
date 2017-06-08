@@ -1,0 +1,16 @@
+@media (max-width: $mobile-max-width) {
+    .ds-two-column--wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: $tablet-min-width) {
+    .ds-two-column--wrapper {
+        display: flex;
+        flex-direction: row;
+
+        &>:nth-child(2) {
+            min-width: 60%;
+        }
+    }
+}

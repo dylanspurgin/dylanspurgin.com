@@ -13,10 +13,12 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "stripe": "^4.22.0",
     "vee-validate": "^2.0.0-beta.25",
     "vue": "^2.2.2",
     "vue-resource": "^1.3.1",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "vue-stripe-elements": "^0.0.3-2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

@@ -1,0 +1,23 @@
+.ds-panel {
+    padding: 40px;
+    margin-left: 40px;
+    background-color: $brand-gray;
+    border-top: solid 4px $brand-color;
+}
+
+pre {
+    background-color: $gray-light;
+    padding: 4px 8px;
+    border-left: solid 2px $brand-color;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.red {
+    color: $brand-red;
+}
+.error {
+    color: $error-red;
+}
