@@ -2,6 +2,21 @@
     <div class="site-content">
         <h2>Portfolio</h2>
 
+        <h3>Ojai Giveaway Landing Page</h3>
+        <a href="http://ojai.kammok.com/" target="_blank">View the site</a>
+        <div class="devices-container">
+            <iphone-six-plus
+                v-bind:screenshot="ojaiScreenshotIPhoneSixPlus"
+                class="portfolio-device"></iphone-six-plus>
+            <ipad
+                v-bind:screenshot="ojaiScreenshotIPad"
+                class="portfolio-device"></ipad>
+            <laptop
+                v-bind:screenshot="ojaiScreenshotLaptop"
+                class="portfolio-device"></laptop>
+        </div>
+        <p>The Ojai landing page shows details of a giveaway sponsored by Kammok, Yeti, and Oru along with other great outdoor brands. The page features large graphics that load fast while remaining sharp. An AJAX form submits user info to Klaviyo once validated. The page is hosted on Netlify to ensure low load times and easy deployment in case changes are requested.</p>
+
         <h3>WaldenHyde.com</h3>
         <a href="http://www.waldenhyde.com/" target="_blank">View the site</a>
         <div class="devices-container">
@@ -84,6 +99,10 @@
     import ipad from './devices/ipad'
     import laptop from './devices/laptop'
 
+    const ojaiScreenshotIPhoneSixPlus = require('../assets/portfolio/ojai-iphone6plus.jpg')
+    const ojaiScreenshotIPad = require('../assets/portfolio/ojai-ipad.jpg')
+    const ojaiScreenshotLaptop = require('../assets/portfolio/ojai-laptop.jpg')
+
     const waldenHydeScreenshotIPhoneSixPlus = require('../assets/portfolio/waldenhyde-home-iphone6plus.jpg')
     const waldenHydeScreenshotIPad = require('../assets/portfolio/waldenhyde-home-ipad.jpg')
     const waldenHydeScreenshotLaptop = require('../assets/portfolio/waldenhyde-home-laptop.jpg')
@@ -99,6 +118,10 @@
         name: 'portfolio',
         data () {
             return {
+                ojaiScreenshotIPhoneSixPlus,
+                ojaiScreenshotIPad,
+                ojaiScreenshotLaptop,
+
                 waldenHydeScreenshotIPhoneSixPlus,
                 waldenHydeScreenshotIPad,
                 waldenHydeScreenshotLaptop,
